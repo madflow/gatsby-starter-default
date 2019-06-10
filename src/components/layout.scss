@@ -1,17 +1,46 @@
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: CustomFontFamily;
+  src: url('../fonts/default.woff');
+}
+
+
+html, body {
+  height: 100%;
+  font-family: CustomFontFamily;
+}
+
 .navbar-fancy {
   @extend .navbar-light;
   @extend .bg-white;
-  @extend .w-100;
   @extend .p-4;
-  .navbar-nav{
-    width: 100%;
-  }
+  
   .nav-link {
     text-transform: uppercase;
     &.active {
       border-bottom: 2px solid $primary;
     }
   }
+}
+
+.landing-home {
+  background-image: url('../images/landing.jpeg');
+  background-repeat: no-repeat;
+  height: 78vh;
+
+  .card {
+    height: 34vh;
+  }
+}
+
+.card-transparent {
+  background: none;
+  border: 1px dashed $white;
+}
+
+.landing-home {
+  @extend .d-flex;
+  @extend .p-3;
+  @extend .mb-3
 }

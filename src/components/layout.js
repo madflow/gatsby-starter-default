@@ -8,8 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
+import Imprint from "./imprint"
 import "./layout.scss"
 
 const Layout = ({ children }) => (
@@ -26,14 +26,14 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div className="container-fluid">
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
+
+        <main>{children}</main>
+        <footer class="d-flex align-items-center px-3">
+          <span class="mr-3">© {new Date().getFullYear()}</span>
+          <span>
+            <Imprint />
+          </span>
+        </footer>
       </>
     )}
   />
