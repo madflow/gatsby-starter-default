@@ -14,7 +14,7 @@ import theme from '../themes/default';
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 50,
   },
   fullList: {
     width: "auto",
