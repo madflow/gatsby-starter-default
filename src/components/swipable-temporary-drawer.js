@@ -1,5 +1,5 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import IconButton from "@material-ui/core/IconButton"
 import List from "@material-ui/core/List"
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       display: "none",
     },
   },
@@ -82,6 +82,7 @@ const SwipeableTemporaryDrawer = () => {
         color="inherit"
         aria-label="Open drawer"
         onClick={toggleDrawer("left", true)}
+        className={classes.menuButton}
         edge="start"
       >
         <MenuIcon />
@@ -90,7 +91,6 @@ const SwipeableTemporaryDrawer = () => {
         open={state.left}
         onClose={toggleDrawer("left", false)}
         onOpen={toggleDrawer("left", true)}
-        className={classes.menuButton}
       >
         {sideList("left")}
       </SwipeableDrawer>
